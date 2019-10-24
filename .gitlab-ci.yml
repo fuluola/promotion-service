@@ -1,0 +1,32 @@
+stages:
+  - build
+  - deploy
+  - sonar
+    
+build:
+  stage: build
+  script:
+    - mvn deploy -DskipTests
+  only:
+    - shortLink
+    - future
+    - master
+    - develop
+    
+sonar:
+  stage: sonar
+  script:
+    - echo "sonar..."
+    - mvn sonar:sonar -Dsonar.java.binaries=target/sonar -Dsonar.inclusions=*.java
+  tags:
+    - sonar
+
+deploy_promotion-service:
+  stage: deploy
+  script: 
+    - echo "部署服务到开发环境..."
+    - bash /home/micro/scripts/deploy-git.sh promotion-service
+  when: manual
+  tags:
+    - deploy    
+

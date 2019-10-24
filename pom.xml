@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>framework-parent</artifactId>
+        <groupId>com.jubaozan.c3</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jubaozan.service</groupId>
+    <artifactId>promotion-service</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>promotion-service</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>	
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--这个jar放在第一个位置-->
+        <dependency>
+            <groupId>com.jubaozan.c3</groupId>
+            <artifactId>framework-service</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--这个jar放在第二个位置-->
+        <dependency>
+            <groupId>com.jubaozan.c3</groupId>
+            <artifactId>framework-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jubaozan.c3</groupId>
+            <artifactId>framework-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jubaozan.c3</groupId>
+            <artifactId>framework-mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jubaozan.modules</groupId>
+            <artifactId>validation-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jubaozan.modules</groupId>
+            <artifactId>setting-util</artifactId>
+        </dependency>
+
+        <dependency>
+           <groupId>com.jubaozan.feign</groupId>
+           <artifactId>feign-clients</artifactId>
+           <version>1.0.7-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jubaozan.c3</groupId>
+            <artifactId>framework-dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.c3</groupId>
+            <artifactId>api-ydym</artifactId>
+        </dependency>
+        
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
